@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/api/users'; //Pegar link novo
+const apiUrl = 'https://sanofiapi.onrender.com/api/users'; //Pegar link novo
 
 
 // Função para listar todos os usuários
