@@ -63,12 +63,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         try {
             // Faz a requisição POST para a rota de autenticação
-            const response = await fetch('http://localhost:3000/auth', {
+            const response = await fetch('https://sanofiapi.onrender.com/api/v1/users/login', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password }), // Envia os dados como JSON
+                headers: {'Content-Type': 'application/json',},
+                body: JSON.stringify({ user, senha }), // Envia os dados como JSON
             })
         } catch (error) {
             console.error('Erro ao autenticar:', error);
