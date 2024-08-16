@@ -7,7 +7,7 @@ function erroLogin() {
             input.classList.add("input-group-error")
         })
 }
-
+/*
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.login-form');
 
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         erroLogin()
     })
 })
+*/
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.login-form')
@@ -61,17 +62,33 @@ document.addEventListener('DOMContentLoaded', function () {
         const senha = document.getElementById('senha').value
 
         try {
-            await fetch(apiUrl+"/login", {
-              method: 'GET',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ user, senha })
+            // Faz a requisição POST para a rota de autenticação
+            const response = await fetch('http://localhost:3000/auth', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }), // Envia os dados como JSON
             })
-            window.location.href = 'teste.html'
-
-          } catch (error) {
-            console.error('Erro ao logar:', error)
-            erroLogin()
-          }
+        } catch (error) {
+            console.error('Erro ao autenticar:', error);
+        }
+        erroLogin()
     })
 })
+
+async function valida_login(user, senha) {
+    try {
+        await fetch(apiUrl+"/login", {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json',},
+          body: JSON.stringify({ user, senha })
+        })
+
+        window.location.href = 'teste.html'
+
+      } catch (error) {
+        console.error('Erro ao logar:', error)
+      }
+}
 
