@@ -1,4 +1,4 @@
-const apiUrl = 'https://sanofiapi.onrender.com/api/users' //Pegar link novo
+const apiUrl = 'https://sanofiapi.onrender.com/api/v1/users' //Pegar link novo
 
 function erroLogin() {
     document.querySelectorAll(".input-group")
@@ -36,3 +36,42 @@ async function fetchUsers(usuario, senha) {
         alert('Usuário ou senha inválidos!')
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.login-form');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        const user = document.getElementById('user').value
+        const senha = document.getElementById('senha').value
+
+        fetchUsers(user, senha)
+        erroLogin()
+    })
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.login-form')
+
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault()
+
+        const user = document.getElementById('user').value
+        const senha = document.getElementById('senha').value
+
+        try {
+            await fetch(apiUrl+"/login", {
+              method: 'GET',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ user, senha })
+            })
+            window.location.href = 'teste.html'
+
+          } catch (error) {
+            console.error('Erro ao logar:', error)
+            erroLogin()
+          }
+    })
+})
+
