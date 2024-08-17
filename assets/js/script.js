@@ -1,17 +1,29 @@
-const apiUrl = 'http://localhost:3000/api/users' //Pegar link novo
+const apiUrl = 'https://sanofiapi.onrender.com/api/v1/users' //Pegar link novo
 
 async function fetchUsers(usuario, senha) {
+    valida = 0
     try {
         const response = await fetch(apiUrl);
         const users = await response.json();
 
         users.forEach(user => {
             if (usuario === user.USUARIO && senha === user.SENHA) {
-                window.location.href = 'acessos.html'
+                let login = {
+                    id: user.USER_ID,
+                    acess: user.NIVEL_ACESSO
+                }
+                const loginInfo = []
+                loginInfo.push(login)
+                localStorage.setItem("login", JSON.stringify(loginInfo))
+
+                window.location.href = 'home.html'
+                valida = 1
             }
         })
     } catch (error) {
-        alert('Usuário ou senha inválidos!')
+        alert("User ou senha invalidos!")
+    } finally {
+        return valida
     }
 }
 
@@ -26,7 +38,7 @@ function erroLogin() {
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.login-form');
 
-    form.addEventListener('submit', function (event) {
+    form.addEventListener('submit', async function (event) {
         event.preventDefault()
 
         document.getElementById('loading-screen').classList.remove('hidden')
@@ -35,9 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const senha = document.getElementById('senha').value
         
         erroLogin()
-        fetchUsers(user, senha)
-
-        document.getElementById('loading-screen').classList.add('hidden')
-
+        let invalid = await fetchUsers(user, senha)
+        if (invalid == 0){
+            document.getElementById('loading-screen').classList.add('hidden')
+        }
     })
 })

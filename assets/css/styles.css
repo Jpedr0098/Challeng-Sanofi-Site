@@ -1,3 +1,16 @@
+:root {
+  --color-purple: #7A00E6;
+  --color-white: #fff;
+  --color-black: #111111;
+  --color-red: crimson;
+  --color-button: #00CED1;
+  --color-button-hover: #00A5A5;
+  --color-loading: #f3f3f3;
+  --color-loading-spin: #007bff;
+  --sombreado-roxo:rgba(122, 0, 230, 0.6);
+  --sombreado-branco: rgba(255, 255, 255, 0.6);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +46,7 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(122, 0, 230, 0.6);
+  background: var(--sombreado-roxo);
 }
 
 .right-section {
@@ -43,7 +56,7 @@ body, html {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: white;
+  background-color: var(--color-white);
 }
 
 .logo {
@@ -58,10 +71,10 @@ body, html {
 .login-form {
   width: 100%;
   max-width: 400px;
-  background-color: #7A00E6;
+  background-color: var(--color-purple);
   padding: 20px;
   border-radius: 10px;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .login-form label {
@@ -88,7 +101,7 @@ body, html {
   top: 50%;
   left: -10px;
   transform: translateY(-50%);
-  background-color: #7A00E6;
+  background-color: var(--color-purple);
   border-radius: 50%;
 }
 
@@ -97,7 +110,7 @@ body, html {
   top: 50%;
   left: -10px;
   transform: translateY(-50%);
-  background-color: #7A00E6;
+  background-color: var(--color-purple);
   border-radius: 50%;
 }
 
@@ -107,7 +120,7 @@ body, html {
   border: solid;
   border-radius: 20px;
   font-size: 16px;
-  border-color: #fff;
+  border-color: var(--color-white);
 }
 
 .input-group-error input {
@@ -116,7 +129,7 @@ body, html {
   border: solid;
   border-radius: 20px;
   font-size: 16px;
-  border-color: crimson;
+  border-color: var(--color-red);
 }
 
 button {
@@ -125,15 +138,15 @@ button {
   font-size: 25px;
   width: 100%;
   padding: 10px;
-  background-color: #00CED1;
+  background-color: var(--color-button);
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: var(--color-white);
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #00A5A5;
+  background-color: var(--color-button-hover);
 }
 
 .forgot-password {
@@ -143,13 +156,13 @@ button:hover {
   display: block;
   text-align: center;
   margin-top: 10px;
-  color: #ffffff;
+  color: var(--color-white);
   transition: color 0.5s;
   text-decoration: none;
 }
 
 .forgot-password:hover {
-  color: #00CED1;
+  color: var(--color-button);
   text-decoration: underline;
 }
 
@@ -163,13 +176,13 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #7A00E6;
+  background-color: var(--color-purple);
   z-index: 1;
 }
 
 .spinner {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #007bff;
+  border: 8px solid var(--color-loading);
+  border-top: 8px solid var(--color-loading-spin);
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -185,7 +198,7 @@ button:hover {
   font-family: "League Gothic", sans-serif;
   font-weight: 400;
   font-size: 28px;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 @keyframes spin {
@@ -215,7 +228,7 @@ button:hover {
       justify-content: center;
       align-items: center;
       padding: 20px;
-      background-color: white;
+      background-color: var(--color-white);
   }
   
   .right-section {
@@ -224,7 +237,7 @@ button:hover {
       left: 50%;
       transform: translate(-50%, -50%);
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: var(--sombreado-branco);
       border-radius: 25px;
   }
 

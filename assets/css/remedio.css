@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #7A00E6;
+}
+
+.main-header {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: #7A00E6;
+    text-decoration: none;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.welcome h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: rgb(134, 217, 255); 
+}
+
+.card {
+    width: 650px;
+    background-color: #24005f;
+    opacity: 75%;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    padding: 20px;
+    border: 1px solid #0a003a; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="number"],
+form button[type="submit"] {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-container .error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: -5px;
+    text-align: left;
+    min-height: 36px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container input[type="number"],
+.form-container textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.form-container input[type="text"]::placeholder,
+.form-container input[type="date"]::placeholder,
+.form-container input[type="number"]::placeholder,
+.form-container textarea::placeholder {
+    color: #000;
+    font-size: medium;
+    opacity: 1;
+}
+
+form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.6s ease;
+    margin-top: 15px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #3d0072;
+}
+
+@media (max-width: 941px) {
+    form label,
+    form input[type="text"],
+    form input[type="date"],
+    form input[type="number"],
+    form button[type="submit"] {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 650px;
+    }
+}
