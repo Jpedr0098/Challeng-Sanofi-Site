@@ -1,26 +1,4 @@
-const apiUrl = 'https://sanofiapi.onrender.com/api/v1/users' //Pegar link novo
-
-function erroLogin() {
-    document.querySelectorAll(".input-group")
-        .forEach((input) => {
-            input.classList.remove("input-group")
-            input.classList.add("input-group-error")
-        })
-}
-/*
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.login-form');
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault()
-
-        const user = document.getElementById('user').value
-        const senha = document.getElementById('senha').value
-
-        fetchUsers(user, senha)
-        erroLogin()
-    })
-})
+const apiUrl = 'http://localhost:3000/api/users' //Pegar link novo
 
 async function fetchUsers(usuario, senha) {
     try {
@@ -29,12 +7,20 @@ async function fetchUsers(usuario, senha) {
 
         users.forEach(user => {
             if (usuario === user.USUARIO && senha === user.SENHA) {
-                window.location.href = 'teste.html'
+                window.location.href = 'acessos.html'
             }
         })
     } catch (error) {
         alert('Usuário ou senha inválidos!')
     }
+}
+
+function erroLogin() {
+    document.querySelectorAll(".input-group")
+        .forEach((input) => {
+            input.classList.remove("input-group")
+            input.classList.add("input-group-error")
+        })
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -43,50 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault()
 
+        document.getElementById('loading-screen').classList.remove('hidden')
+
         const user = document.getElementById('user').value
         const senha = document.getElementById('senha').value
-
+        
+        erroLogin()
         fetchUsers(user, senha)
-        erroLogin()
+
+        document.getElementById('loading-screen').classList.add('hidden')
+
     })
 })
-*/
-
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.login-form')
-
-    form.addEventListener('submit', async function (event) {
-        event.preventDefault()
-
-        const user = document.getElementById('user').value
-        const senha = document.getElementById('senha').value
-
-        try {
-            // Faz a requisição POST para a rota de autenticação
-            const response = await fetch('https://sanofiapi.onrender.com/api/v1/users/login', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json',},
-                body: JSON.stringify({ user, senha }), // Envia os dados como JSON
-            })
-        } catch (error) {
-            console.error('Erro ao autenticar:', error);
-        }
-        erroLogin()
-    })
-})
-
-async function valida_login(user, senha) {
-    try {
-        await fetch(apiUrl+"/login", {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json',},
-          body: JSON.stringify({ user, senha })
-        })
-
-        window.location.href = 'teste.html'
-
-      } catch (error) {
-        console.error('Erro ao logar:', error)
-      }
-}
-
