@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paginação Avançada de Tabela</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    
+    th {
+        background-color: #f2f2f2;
+    }
+    
+    #paginacao {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    #paginacao button, #paginacao input {
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+    }
+    
+    #paginacao button.active {
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+    
+</style>
+<body>
+    <table id="tabelaUsuarios">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela serão geradas dinamicamente -->
+        </tbody>
+    </table>
+
+    <div id="paginacao">
+        <button id="primeiro">Primeiro</button>
+        <button id="anterior">Anterior</button>
+        <span id="numerosPaginas"></span>
+        <button id="proximo">Próximo</button>
+        <button id="ultimo">Último</button>
+        <input type="number" id="paginaInput" min="1" placeholder="Ir para página" />
+        <button id="irParaPagina">Ir</button>
+    </div>
+
+    <script>
+        const usuarios = [...Array(150).keys()].map(i => ({
+            id: i + 1,
+            nome: `Usuario ${i + 1}`,
+            email: `usuario${i + 1}@example.com`
+        }));
+        
+        const itensPorPagina = 5;
+        let paginaAtual = 1;
+        
+        function renderTabela(pagina) {
+            const tabelaBody = document.querySelector('#tabelaUsuarios tbody');
+            tabelaBody.innerHTML = '';
+        
+            const inicio = (pagina - 1) * itensPorPagina;
+            const fim = inicio + itensPorPagina;
+        
+            const usuariosPagina = usuarios.slice(inicio, fim);
+        
+            usuariosPagina.forEach(usuario => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${usuario.id}</td>
+                    <td>${usuario.nome}</td>
+                    <td>${usuario.email}</td>
+                `;
+                tabelaBody.appendChild(row);
+            });
+        
+            atualizarBotoesPaginacao();
+        }
+        
+        function atualizarBotoesPaginacao() {
+            const paginacaoDiv = document.getElementById('numerosPaginas');
+            paginacaoDiv.innerHTML = '';
+        
+            const totalPaginas = Math.ceil(usuarios.length / itensPorPagina);
+            const maxVisiveis = 5;
+        
+            let inicio = Math.max(1, paginaAtual - Math.floor(maxVisiveis / 2));
+            let fim = Math.min(totalPaginas, inicio + maxVisiveis - 1);
+        
+            if (inicio > 1) {
+                paginacaoDiv.innerHTML += `<span>...</span>`;
+            }
+        
+            for (let i = inicio; i <= fim; i++) {
+                const botao = document.createElement('button');
+                botao.innerText = i;
+                botao.classList.add('pagina-botao');
+                if (i === paginaAtual) {
+                    botao.classList.add('active');
+                }
+        
+                botao.dataset.pagina = i;
+                paginacaoDiv.appendChild(botao);
+            }
+        
+            if (fim < totalPaginas) {
+                paginacaoDiv.innerHTML += `<span>...</span>`;
+            }
+        
+            document.getElementById('primeiro').disabled = paginaAtual === 1;
+            document.getElementById('anterior').disabled = paginaAtual === 1;
+            document.getElementById('proximo').disabled = paginaAtual === totalPaginas;
+            document.getElementById('ultimo').disabled = paginaAtual === totalPaginas;
+        }
+        
+        // Funções para os botões de navegação
+        document.getElementById('primeiro').addEventListener('click', function() {
+            paginaAtual = 1;
+            renderTabela(paginaAtual);
+        });
+        
+        document.getElementById('anterior').addEventListener('click', function() {
+            if (paginaAtual > 1) {
+                paginaAtual--;
+                renderTabela(paginaAtual);
+            }
+        });
+        
+        document.getElementById('proximo').addEventListener('click', function() {
+            const totalPaginas = Math.ceil(usuarios.length / itensPorPagina);
+            if (paginaAtual < totalPaginas) {
+                paginaAtual++;
+                renderTabela(paginaAtual);
+            }
+        });
+        
+        document.getElementById('ultimo').addEventListener('click', function() {
+            const totalPaginas = Math.ceil(usuarios.length / itensPorPagina);
+            paginaAtual = totalPaginas;
+            renderTabela(paginaAtual);
+        });
+        
+        // Listener para os botões de número de página
+        document.getElementById('numerosPaginas').addEventListener('click', function(event) {
+            if (event.target.classList.contains('pagina-botao')) {
+                paginaAtual = parseInt(event.target.dataset.pagina);
+                renderTabela(paginaAtual);
+            }
+        });
+        
+        // Input para ir diretamente a uma página específica
+        document.getElementById('irParaPagina').addEventListener('click', function() {
+            const pagina = parseInt(document.getElementById('paginaInput').value);
+            if (pagina >= 1 && pagina <= Math.ceil(usuarios.length / itensPorPagina)) {
+                paginaAtual = pagina;
+                renderTabela(paginaAtual);
+            }
+        });
+        
+        renderTabela(paginaAtual);
+                
+    </script>
+</body>
+</html>
