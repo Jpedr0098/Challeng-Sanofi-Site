@@ -34,7 +34,7 @@
   <main>
     <h1>Controle de acessos</h1>
 
-    <div id="CRUD-API">
+    <div id="CRUD-API"> 
       <div id="createUserForms" class="forms">
         <h2>Criar usuario</h2>
         <form id="createUser">
@@ -83,12 +83,12 @@
         </form>
       </div>
   
-      <div id="updateUserForms" class="forms">
+      <div id="deletUserForms" class="forms">
         <h2>Atualizar usuario</h2>
-        <form id="updateUser">
-          <div>
+        <form id="deletUser">
+          <div class="selectUserAtt">
             <label for="userName">Login:</label>
-            <select name="userName" id="userNameUpdade">
+            <select style="width: 200px" name="userName" id="userNameUpdade">
               
             </select>
           </div>
@@ -129,60 +129,38 @@
               </div>
             </div>
           </div>
-          <button type="submit">Criar Usuario</button>
+          <button type="submit">Atualizar Usuario</button>
         </form>
       </div>
 
       <div id="updateUserForms" class="forms">
-        <h2>Criar usuario</h2>
-        <form id="createUser">
-          <div>
-            <label for="userName">Login:</label>
-            <input type="text" id="userName" required>
+        <h2>Deletar usuario</h2>
+        <form id="updateUser">
+          <div class="selectUserAtt">
+            <label for="userName2">Login:</label>
+            <select style="width: 200px" name="userName2" id="userNameUpdade2">
+              
+            </select>
           </div>
-          <div>
-            <label for="">Nivel de Acesso:</label>
-            <div class="radioSelectAcess">
-              <div>
-                <input type="radio" name="createAcess" id="masterRadio" value="master">
-                <label for="masterRadio">Acesso Master</label>
-              </div>      
-              <div class="selectAbas">
-                <div>
-                  <input type="radio" name="createAcess" id="restritoRadio" checked>
-                  <label for="restritoRadio">Restringir acesso à:</label>
-                </div>
-                <div>
-                  <div>
-                    <input type="checkbox" value="1" id="lv1">
-                    <label for="lv1">Bater Ponto</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" value="2" id="lv2">
-                    <label for="lv2">Dashboard</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" value="3" id="lv3">
-                    <label for="lv3">Cadastro remédio</label>
-                  </div>       
-                  <div>
-                    <input type="checkbox" value="4" id="lv4">
-                    <label for="lv4">Controle de Malas</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" value="5" id="lv5">
-                    <label for="lv5">Analise de desempenho</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button type="submit">Criar Usuario</button>
+          <button type="submit">Deletar Usuario</button>
         </form>
       </div>
     </div>
+    <h2>Lista de Usuários</h2>
+      <div id="users">
+        <button id="fetchUsersButton">Atualizar Lista</button>
+        <table id="usersTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Usuario</th>
+              <th>Nivel de acesso</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
 
-    
   </main>
  
 
@@ -219,22 +197,6 @@
     <input type="number" id="deleteId" required>
     <button type="submit">Deletar</button>
   </form>
-
-
-  <h2>Lista de Usuários</h2>
-  <div id="users">
-    <button id="fetchUsersButton">Atualizar Lista</button>
-    <table id="usersTable">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Usuario</th>
-          <th>Nivel de acesso</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
 
   -->
 </body>

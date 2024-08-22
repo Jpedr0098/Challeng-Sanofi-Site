@@ -1,33 +1,51 @@
 const apiUrl = 'https://sanofiapi.onrender.com/api/v1/users'; //Pegar link novo
 
-
 // Função para listar todos os usuários
 async function fetchUsers() {
   try {
     const response = await fetch(apiUrl);
     const users = await response.json();
-    console.log(users)
-    //const tableBody = document.querySelector('#usersTable tbody');
     const optionSelect = document.querySelector('#userNameUpdade');
-    //tableBody.innerHTML = ''; // Limpa a tabela antes de atualizar
+    const optionSelect2 = document.querySelector('#userNameUpdade2');
+    const tableBody = document.querySelector('#usersTable tbody');
+    tableBody.innerHTML = ''; // Limpa a tabela antes de atualizar
 
+    const vazio = document.createElement('option');
+    vazio.value = ``
+    vazio.text =  ``
+    optionSelect.appendChild(vazio)
+
+    const vazio2 = document.createElement('option');
+    vazio2.value = ``
+    vazio2.text =  ``
+    optionSelect2.appendChild(vazio2)
 
     users.forEach(user => {
-      const row = document.createElement('option');
-      //row.innerHTML = `<td>${user.USER_ID}</td><td>${user.USUARIO}</td><td>${user.NIVEL_ACESSO}</td>`;
-      //tableBody.appendChild(row);
+      const row = document.createElement('tr');
+      row.innerHTML = `<td>${user.USER_ID}</td><td>${user.USUARIO}</td><td>${user.NIVEL_ACESSO}</td>`;
+      tableBody.appendChild(row);
 
-      row.value = `${user.USUARIO}`
-      row.text =  `${user.USUARIO}`
-      optionSelect.appendChild(row)
+      const opcao = document.createElement('option');
+      opcao.value = `${user.USUARIO}`
+      opcao.text =  `${user.USUARIO}`
+      optionSelect.appendChild(opcao)
+
+      const opcao2 = document.createElement('option');
+      opcao2.value = `${user.USUARIO}`
+      opcao2.text =  `${user.USUARIO}`
+      optionSelect2.appendChild(opcao2)
     });
   } catch (error) {
     console.error('Erro ao buscar usuários:', error);
   }
-  $(document).ready(function() {
-   $('#userNameUpdade').select2();
-  });
 }
+
+$(document).ready(function() {
+  $('#userNameUpdade').select2();
+})
+ $(document).ready(function() {
+  $('#userNameUpdade2').select2();
+})
 
 // // Função para criar um novo usuário
 // document.getElementById('createUserForm').addEventListener('submit', async (e) => {
