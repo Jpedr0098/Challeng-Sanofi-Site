@@ -1,27 +1,122 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  input, button {
-    margin: 5px 0;
-  }
-  
-  #users {
-    margin-top: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-    border: 1px solid black;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-  
+:root {
+  --color-purple: #7A00E6;
+  --color-purple-hover: #6119a0;
+  --color-white: #fff;
+  --color-black: #111111;
+  --color-red: crimson;
+  --color-button: #00CED1;
+  --color-button-hover: #00A5A5;
+  --color-loading: #f3f3f3;
+  --color-loading-spin: #007bff;
+  --sombreado-roxo:rgba(122, 0, 230, 0.6);
+  --sombreado-branco: rgba(255, 255, 255, 0.6);
+  --color-subtitulo: rgb(134, 217, 255);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-white);
+}
+
+.main-header {
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 150px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  font-family: "League Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: var(--color-purple);
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem
+}
+
+.forms form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 450px;
+}
+
+.radioSelectAcess {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.selectAbas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+button {
+  margin-top: 10px;
+  background-color: var(--color-purple);
+  color: var(--color-white);
+  border-radius: 20px;
+  height: 50px;
+  width: 50%;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+button:hover{
+  background-color: var(--color-purple-hover);
+}
+
+#CRUD-API {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+  gap:100px;
+}

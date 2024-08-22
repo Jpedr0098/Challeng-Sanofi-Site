@@ -3,10 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     
     cards.forEach(card => {
         card.addEventListener('click', function () {
-            // Obter o URL personalizado do card clicado
+
             const url = card.getAttribute('data-url');
-            
-            // Redirecionar para o URL correspondente
+
             window.location.href = url;
         });
     });

@@ -16,7 +16,7 @@ const acessos = [
     },
     {
     acesso: '3',
-    links: '/pag_manutencao.html',
+    links: '/cadastrar_remedio.html',
     imagem: '/assets/images/cadastrar_icon.png',
     imagemAlt: '',
     namePage: 'Castrar remédio'
@@ -46,6 +46,8 @@ const configAcesso = {
 
 loginInfo.forEach(login => { 
     let nivel = login.acess
+
+    //redSenha(login.newAcess)
 
     if (nivel == 'master'){
         acessos.forEach(cardInfo => {
@@ -79,3 +81,13 @@ function card(cardInfo){
     card.innerHTML = cardTarefa
     document.querySelector("#OptionSystem").appendChild(card)
 }
+
+function redSenha(inputSenha){
+    if (inputSenha == 1) {
+        document.getElementById('modal').style.display = 'flex'
+    }   
+}
+
+document.getElementById('cancelar').addEventListener('click', function() {
+    document.getElementById('modal').style.display = 'none';
+}); 

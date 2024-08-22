@@ -10,7 +10,8 @@ async function fetchUsers(usuario, senha) {
             if (usuario === user.USUARIO && senha === user.SENHA) {
                 let login = {
                     id: user.USER_ID,
-                    acess: user.NIVEL_ACESSO
+                    acess: user.NIVEL_ACESSO,
+                    newAcess: user.NOVO_ACESSO
                 }
                 const loginInfo = []
                 loginInfo.push(login)
