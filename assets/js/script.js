@@ -1,26 +1,24 @@
-const apiUrl = 'https://sanofiapi.onrender.com/api/v1/users' //Pegar link novo
+const apiUrl = 'https://sanofiapi.onrender.com/api/v2/users' //Pegar link novo
 
 async function fetchUsers(usuario, senha) {
     valida = 0
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(`${apiUrl}/${usuario}`);
         const users = await response.json();
 
-        users.forEach(user => {
-            if (usuario === user.USUARIO && senha === user.SENHA) {
-                let login = {
-                    id: user.USER_ID,
-                    acess: user.NIVEL_ACESSO,
-                    newAcess: user.NOVO_ACESSO
-                }
-                const loginInfo = []
-                loginInfo.push(login)
-                localStorage.setItem("login", JSON.stringify(loginInfo))
-
-                window.location.href = 'home.html'
-                valida = 1
+        if (usuario === users.USUARIO && senha === users.SENHA) {
+            let login = {
+                id: users.USER_ID,
+                acess: users.NIVEL_ACESSO,
+                newAcess: users.NOVO_ACESSO
             }
-        })
+            const loginInfo = []
+            loginInfo.push(login)
+            localStorage.setItem("login", JSON.stringify(loginInfo))
+
+            window.location.href = 'home.html'
+            valida = 1
+        }
     } catch (error) {
         alert("User ou senha invalidos!")
     } finally {
@@ -46,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const user = document.getElementById('user').value
         const senha = document.getElementById('senha').value
-        
+
         erroLogin()
         let invalid = await fetchUsers(user, senha)
-        if (invalid == 0){
+        if (invalid == 0) {
             document.getElementById('loading-screen').classList.add('hidden')
         }
     })

@@ -3,7 +3,7 @@ const apiUrl = 'https://sanofiapi.onrender.com/api/v1/users'; //Pegar link novo
 // Função para listar todos os usuários
 async function fetchUsers() {
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(`https://sanofiapi.onrender.com/api/v1/users`);
     const users = await response.json();
     const optionSelect = document.querySelector('#userNameUpdade');
     const optionSelect2 = document.querySelector('#userNameUpdade2');
@@ -12,13 +12,16 @@ async function fetchUsers() {
 
     const vazio = document.createElement('option');
     vazio.value = ``
-    vazio.text =  ``
+    vazio.text = ``
     optionSelect.appendChild(vazio)
 
     const vazio2 = document.createElement('option');
     vazio2.value = ``
-    vazio2.text =  ``
+    vazio2.text = ``
     optionSelect2.appendChild(vazio2)
+
+    console.log(Array.isArray(users))
+    console.log(users)
 
     users.forEach(user => {
       const row = document.createElement('tr');
@@ -27,12 +30,12 @@ async function fetchUsers() {
 
       const opcao = document.createElement('option');
       opcao.value = `${user.USUARIO}`
-      opcao.text =  `${user.USUARIO}`
+      opcao.text = `${user.USUARIO}`
       optionSelect.appendChild(opcao)
 
       const opcao2 = document.createElement('option');
       opcao2.value = `${user.USUARIO}`
-      opcao2.text =  `${user.USUARIO}`
+      opcao2.text = `${user.USUARIO}`
       optionSelect2.appendChild(opcao2)
     });
   } catch (error) {
@@ -40,10 +43,10 @@ async function fetchUsers() {
   }
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   $('#userNameUpdade').select2();
 })
- $(document).ready(function() {
+$(document).ready(function () {
   $('#userNameUpdade2').select2();
 })
 
