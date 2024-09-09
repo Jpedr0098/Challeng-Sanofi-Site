@@ -22,22 +22,37 @@ async function fetchUsers() {
 
     console.log(Array.isArray(users))
     console.log(users)
+    if (Array.isArray(users)) {
+      users.forEach(user => {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${user.USER_ID}</td><td>${user.USUARIO}</td><td>${user.NIVEL_ACESSO}</td>`;
+        tableBody.appendChild(row);
 
-    users.forEach(user => {
+        const opcao = document.createElement('option');
+        opcao.value = `${user.USUARIO}`
+        opcao.text = `${user.USUARIO}`
+        optionSelect.appendChild(opcao)
+
+        const opcao2 = document.createElement('option');
+        opcao2.value = `${user.USUARIO}`
+        opcao2.text = `${user.USUARIO}`
+        optionSelect2.appendChild(opcao2)
+      });
+    } else {
       const row = document.createElement('tr');
-      row.innerHTML = `<td>${user.USER_ID}</td><td>${user.USUARIO}</td><td>${user.NIVEL_ACESSO}</td>`;
+      row.innerHTML = `<td>${users.USER_ID}</td><td>${users.USUARIO}</td><td>${users.NIVEL_ACESSO}</td>`;
       tableBody.appendChild(row);
 
       const opcao = document.createElement('option');
-      opcao.value = `${user.USUARIO}`
-      opcao.text = `${user.USUARIO}`
+      opcao.value = `${users.USUARIO}`
+      opcao.text = `${users.USUARIO}`
       optionSelect.appendChild(opcao)
 
       const opcao2 = document.createElement('option');
-      opcao2.value = `${user.USUARIO}`
-      opcao2.text = `${user.USUARIO}`
+      opcao2.value = `${users.USUARIO}`
+      opcao2.text = `${users.USUARIO}`
       optionSelect2.appendChild(opcao2)
-    });
+    }
   } catch (error) {
     console.error('Erro ao buscar usuários:', error);
   }
