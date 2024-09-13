@@ -182,7 +182,7 @@
     color: #010101;
     text-align: right;
   }
-  #caixa_roxa {
+  .caixa_roxa {
     display: block;
     padding-left: 15px;
     width: 100%;
@@ -243,6 +243,14 @@
     text-align: right;
     text-decoration: none;
   }
+
+  .confirmTitle:active {
+    color: #036d1a;
+  }
+  .dashTitle:active {
+    color:#6208b6;
+  }
+
   .caixa_calendario {
     position: relative;
     display: flex;
@@ -290,4 +298,8 @@
   .conf_malas {
     width: 85%;
     margin-left: 39px;
+  }
+
+  .erroIten {
+    outline: 3px solid red;
   }
