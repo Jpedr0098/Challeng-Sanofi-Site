@@ -149,6 +149,7 @@
     min-height: 120px;
     background-color: #7b0ae6;
     border-radius: 15px;
+    margin: 0px 0px 10px 0px;
   }
   .roxo_meuseventos {
     position: relative;
@@ -292,4 +293,3 @@
     width: 91px;
     min-width: 0;
   }
-

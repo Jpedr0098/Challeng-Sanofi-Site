@@ -14,10 +14,40 @@
     <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="./css/Calenderio.css" />
 
-    <script src="/js/calendario.js"></script>
-    <script src="/js/exit.js" defer></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
 
+    <script src="/js/exit.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            height: '83%',
+            fixedWeekCount: false,
+            events: []
+          });
+          calendar.render();
+
+          // Função para adicionar eventos
+      window.addEvent = function() {
+        var title = document.getElementById('eventTitle').value;
+        var date = document.getElementById('eventDate').value;
+
+        if (title && date) {
+          calendar.addEvent({
+            title: title,
+            start: date,
+            allDay: true
+          });
+          document.getElementById('eventTitle').value = '';
+          document.getElementById('eventDate').value = '';
+        } else {
+          alert('Por favor, insira o título e a data do evento.');
+        }
+      }
+        });
+      </script>
 
 </head>
 
@@ -46,27 +76,16 @@
                         <div class="fundo_caixa"></div>
                         <!-- Block indicating user access level. -->
                         <div class="prox_eventos">
-                            <color class="roxo_meuseventos">
-                                <h1 class="eventos_Titulo">
-                                    <!-- Title for confirmation section. -->
-                                    MEUS EVENTOS
-                                </h1>
-                            </color>
-                            <h1 class="meus_eventos">
+                            <h1 class="prox_eventos_titulo">
                                 <!-- Title for updating a user. -->
-                                <a href="./Calendario_editarevento.html"><img class="editar" src="./assets/editar.png" alt="alt text" /></a>
+                                Próximos eventos:
                             </h1>
-
-                            <div class="botao_novo">
-                                <a href="./Calendario_novoevento.html"><color class="verde"></color></a>
-                                <a class="novo_evento"href="./Calendario_novoevento.html">NOVO EVENTO</a>
-                            </div>
                         </div>
 
-                        
+
                         <div class="meus_eventos_botao">
-                            <a href="./Calendario.html"><color class="roxo"></color></a>
-                            <a class="Botao_eventos"href="./Calendario.html">Voltar</a>
+                            <a href="./Calendario_meuseventos.html"><color class="roxo"></color></a>
+                            <a class="Botao_eventos"href="./Calendario_meuseventos.html">Meus Eventos</a>
                                 <!-- Title for confirmation section. -->
                         </div>
                     </div>
@@ -78,7 +97,11 @@
                                     CALENDÁRIO
                                 </h1>
                             </color>
+
+                            <h1 style="text-align: center;">Calendário de Eventos</h1>
+
                             <div id='calendar'></div>
+                            
                         </div>
                         <!-- Block indicating user access level. -->
                         
