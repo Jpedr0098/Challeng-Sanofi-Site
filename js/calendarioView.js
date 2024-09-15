@@ -122,15 +122,24 @@ function salvarLocal (objectEvent) {
     reloadPag()
 }
 
-function salvarAlteracao (objectEvent) {
+function salvarAlteracao (objectEvent, tipo) {
     const eventos = JSON.parse(localStorage.getItem("eventCalendar")) || []
     let newEventos = []
-    eventos.forEach(evento => { 
-        if(evento.id == objectEvent.id){
-            evento = objectEvent
-        }
-        newEventos.push(evento)
-    })
+
+    if (tipo == 1){
+        eventos.forEach(evento => { 
+            if(evento.id == objectEvent.id){
+                evento = objectEvent
+            }
+            newEventos.push(evento)
+        })
+    } else {
+        eventos.forEach(evento => { 
+            if(evento.id != objectEvent){
+                newEventos.push(evento)
+            }
+        })
+    }
     localStorage.setItem('eventCalendar', JSON.stringify(newEventos))
     reloadPag()
 }
@@ -220,12 +229,19 @@ document.querySelector("#btn_salvar_edit").addEventListener('click', function up
             start: date,
             allDay: true
         }
-        salvarAlteracao(objectEvent)
+        salvarAlteracao(objectEvent, 1)
 
     document.getElementById('cx_editEvent').classList.add('hidden')
     document.getElementById("cx_myEvents").classList.remove("hidden")
     }
 })
+
+function deleteEvent(eventId) {
+    const event = calendar.getEventById(eventId)
+    event.remove()
+
+    salvarAlteracao(eventId, 0)
+}
 
 function reloadPag(){
     document.querySelector("#addEventos").innerHTML = ''
@@ -269,8 +285,9 @@ function myEventos(evento){
             <h1>${evento.title}</h1>
             <h2>${evento.local} - ${date[2]}/${date[1]}</h2>
         </div> 
-        <div>
+        <div class="columnBTN">
             <button onclick="editEvent(${evento.id})"><img class="editar" src="./assets/editar.png"/></button>
+            <button onclick="deleteEvent(${evento.id})"><img class="editar" src="./assets/delete.png"/></button>
         </div>
     </div>
     `

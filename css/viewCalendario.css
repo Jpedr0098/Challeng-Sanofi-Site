@@ -90,3 +90,9 @@
     flex-direction: column;
     width: 100%;
 }
+
+.columnBTN {
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
