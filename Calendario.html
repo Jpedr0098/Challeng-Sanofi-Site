@@ -46,10 +46,14 @@
                             <h1 class="prox_eventos_titulo">
                                 Próximos eventos:
                             </h1>
+                            <div id="addEventos" class="ajustesFlex">
+
+                            </div>
+
                         </div>
-                        <div class="meus_eventos_botao">
+                        <div class="meus_eventos_botao" id="btn_myEvents">
                             <color class="roxo"></color>
-                            <button class="Botao_eventos" id="btn_myEvents">Meus Eventos</button>
+                            <button class="Botao_eventos" >Meus Eventos</button>
                         </div>
                     </div>
 
@@ -61,18 +65,18 @@
                                 <h1 class="eventos_Titulo">
                                     MEUS EVENTOS
                                 </h1>
-                            </color>
-                            <h1 class="meus_eventos">
-                                <a href="./Calendario_editarevento.html"><img class="editar" src="./assets/editar.png" alt="alt text" /></a>
-                            </h1>
-                            <div class="botao_novo">
+                            </color>    
+                            <div id="myEventosEdit"  class="ajustesFlex">
+
+                            </div>
+                            <div class="botao_novo" id="btn_newEvent">
                                 <color class="verde"></color>
-                                <button class="novo_evento" id="btn_newEvent">NOVO EVENTO</button>
+                                <button class="novo_evento" >NOVO EVENTO</button>
                             </div>
                         </div>
-                        <div class="meus_eventos_botao">
+                        <div class="meus_eventos_botao" id="btn_cx_inicial">
                             <color class="roxo"></color>
-                            <button class="Botao_eventos" id="btn_cx_inicial">Voltar</button>
+                            <button class="Botao_eventos" >Voltar</button>
                         </div>
                     </div>
 
@@ -90,79 +94,84 @@
                                     <h1 class="Nome">
                                         Training:
                                     </h1>
-                                    <input type="text" id='caixa_roxa'/>
+                                    <input type="text" class='caixa_roxa' id="txt_training"/>
                                 </div>
                                 <div class="Responsavel">
                                     <h1 class="Nome">
                                         Responsavel:
                                     </h1>
-                                    <input type="text" id='caixa_roxa'/>
+                                    <input type="text" class='caixa_roxa' id="txt_responsavel"/>
                                 </div>
                                 <div class="Tipo">
                                     <h1 class="Nome">
                                         Tipo:
                                     </h1>
-                                    <select id="caixa_roxa" name="setor" required>
+                                    <select class="caixa_roxa" id="TipoEvent" name="setor" required>
                                         <option value="" disabled selected>Selecione um setor</option>
-                                        <option value="Antártico">Compras</option>
-                                        <option value="Ártico">Vendas</option>
-                                        <option value="Atlântico Norte">Malas</option>
-                                        <option value="Atlântico Sul">Treinamentos</option>
-                                        <option value="Índico">Financeiro</option>
-                                        <option value="Pacífico Norte">Produtos</option>
+                                        <option value="Mandatorio">Mandatório</option>
+                                        <option value="Desenvolvimento">Desenvolvimento</option>
+                                        <option value="Evento">Evento</option>
+                                        <option value="Encontro">Encontro Área</option>
+                                        <option value="Visita">Visita Internacional</option>
+                                        <option value="Campanha">Campanha</option>
+                                        <option value="Ativacao">Ativação</option>
                                     </select>
                                 </div>
                                 <div class="Area">
                                     <h1 class="Nome">
                                         Área:
                                     </h1>
-                                    <input type="text" id='caixa_roxa'/>
+                                    <select class="caixa_roxa" id="Areas" name="setor" required>
+                                        <option value="" disabled selected>Selecione um setor</option>
+                                        <option value="PDLI">PDLI</option>
+                                        <option value="SF Training">SF Training</option>
+                                        <option value="HSE">HSE</option>
+                                        <option value="DEEI">DE&I</option>
+                                        <option value="Talent">Talent Management</option>
+                                        <option value="Cultura">Cultura</option>
+                                    </select>
                                 </div>
                                 <div class="Formato">
                                     <h1 class="Nome">
                                         Formato:
                                     </h1>
-                                    <select id="caixa_roxa" name="setor" required>
+                                    <select class="caixa_roxa" id="local_formato" name="setor" required>
                                         <option value="" disabled selected>Selecione um setor</option>
-                                        <option value="Antártico">Compras</option>
-                                        <option value="Ártico">Vendas</option>
-                                        <option value="Atlântico Norte">Malas</option>
-                                        <option value="Atlântico Sul">Treinamentos</option>
-                                        <option value="Índico">Financeiro</option>
-                                        <option value="Pacífico Norte">Produtos</option>
+                                        <option value="Presencial">Presencial</option>
+                                        <option value="Online">Online</option>
+                                        <option value="Hibrido">Hibrido</option>
                                     </select>
                                 </div>
                                 <div class="Localidade">
                                     <h1 class="Nome">
-                                        Localidade:
+                                        Audiencia:
                                     </h1>
-                                    <select id="caixa_roxa" name="setor" required>
+                                    <select class="caixa_roxa" id="Audiencia" name="setor" required>
                                         <option value="" disabled selected>Selecione um setor</option>
-                                        <option value="Antártico">Compras</option>
-                                        <option value="Ártico">Vendas</option>
-                                        <option value="Atlântico Norte">Malas</option>
-                                        <option value="Atlântico Sul">Treinamentos</option>
-                                        <option value="Índico">Financeiro</option>
-                                        <option value="Pacífico Norte">Produtos</option>
+                                        <option value="Todos">Todos</option>
+                                        <option value="Sede">Sede</option>
+                                        <option value="Suzano">Suzano</option>
+                                        <option value="Campinas">Campinas</option>
+                                        <option value="ForcaVendas">Força de Vendas</option>
                                     </select>
                                 </div>
-                                <div class="Data">
+                                <div class="Data" id="dt_event">
                                     <h1 class="Nome">
                                         Data:
                                     </h1>
-                                    <input type="date" id="caixa_roxa" name="data" placeholder="Selecione uma data" required>
+                                    <input type="date" id="dt_evento" class="caixa_roxa" name="data" placeholder="Selecione uma data" required>
                                 </div>
                             </div>
-                            <div class="botao_novo">
+                            <div class="botao_novo" onclick="addEvent()">
                                 <color class="verde"></color>
                                 <h1 class="novo_evento">
                                     CADASTRAR
                                 </h1>
                             </div>
                         </div>
-                        <div class="meus_eventos_botao">
+                        <div class="meus_eventos_botao" id="btn_cx_myEvents"> 
                             <color class="roxo"></color>
-                            <button class="Botao_eventos" id="btn_cx_myEvents">Voltar</button>
+                            <button class="Botao_eventos" >Voltar</button>
                         </div>
                     </div>
 
@@ -172,7 +181,7 @@
                         <div class="prox_eventos">
                             <color class="roxo_meuseventos">
                                 <h1 class="eventos_Titulo">
-                                    NOVO EVENTO
+                                    EDITAR EVENTO
                                 </h1>
                             </color>
                             <div class="itens_evento">
@@ -180,79 +189,84 @@
                                     <h1 class="Nome">
                                         Training:
                                     </h1>
-                                    <input type="text" id='caixa_roxa'/>
+                                    <input type="text" class='caixa_roxa' id="txt_training_edit"/>
                                 </div>
                                 <div class="Responsavel">
                                     <h1 class="Nome">
                                         Responsavel:
                                     </h1>
-                                    <input type="text" id='caixa_roxa'/>
+                                    <input type="text" class='caixa_roxa' id="txt_responsavel_edit"/>
                                 </div>
                                 <div class="Tipo">
                                     <h1 class="Nome">
                                         Tipo:
                                     </h1>
-                                    <select id="caixa_roxa" name="setor" required>
+                                    <select class="caixa_roxa" id="TipoEvent_edit" name="setor" required>
                                         <option value="" disabled selected>Selecione um setor</option>
-                                        <option value="Antártico">Compras</option>
-                                        <option value="Ártico">Vendas</option>
-                                        <option value="Atlântico Norte">Malas</option>
-                                        <option value="Atlântico Sul">Treinamentos</option>
-                                        <option value="Índico">Financeiro</option>
-                                        <option value="Pacífico Norte">Produtos</option>
+                                        <option value="Mandatorio">Mandatório</option>
+                                        <option value="Desenvolvimento">Desenvolvimento</option>
+                                        <option value="Evento">Evento</option>
+                                        <option value="Encontro">Encontro Área</option>
+                                        <option value="Visita">Visita Internacional</option>
+                                        <option value="Campanha">Campanha</option>
+                                        <option value="Ativacao">Ativação</option>
                                     </select>
                                 </div>
                                 <div class="Area">
                                     <h1 class="Nome">
                                         Área:
                                     </h1>
-                                    <input type="text" id='caixa_roxa'/>
+                                    <select class="caixa_roxa" id="Areas_edit" name="setor" required>
+                                        <option value="" disabled selected>Selecione um setor</option>
+                                        <option value="PDLI">PDLI</option>
+                                        <option value="SF Training">SF Training</option>
+                                        <option value="HSE">HSE</option>
+                                        <option value="DEEI">DE&I</option>
+                                        <option value="Talent">Talent Management</option>
+                                        <option value="Cultura">Cultura</option>
+                                    </select>
                                 </div>
                                 <div class="Formato">
                                     <h1 class="Nome">
                                         Formato:
                                     </h1>
-                                    <select id="caixa_roxa" name="setor" required>
+                                    <select class="caixa_roxa" id="local_formato_edit" name="setor" required>
                                         <option value="" disabled selected>Selecione um setor</option>
-                                        <option value="Antártico">Compras</option>
-                                        <option value="Ártico">Vendas</option>
-                                        <option value="Atlântico Norte">Malas</option>
-                                        <option value="Atlântico Sul">Treinamentos</option>
-                                        <option value="Índico">Financeiro</option>
-                                        <option value="Pacífico Norte">Produtos</option>
+                                        <option value="Presencial">Presencial</option>
+                                        <option value="Online">Online</option>
+                                        <option value="Hibrido">Hibrido</option>
                                     </select>
                                 </div>
                                 <div class="Localidade">
                                     <h1 class="Nome">
-                                        Localidade:
+                                        Audiencia:
                                     </h1>
-                                    <select id="caixa_roxa" name="setor" required>
+                                    <select class="caixa_roxa" id="Audiencia_edit" name="setor" required>
                                         <option value="" disabled selected>Selecione um setor</option>
-                                        <option value="Antártico">Compras</option>
-                                        <option value="Ártico">Vendas</option>
-                                        <option value="Atlântico Norte">Malas</option>
-                                        <option value="Atlântico Sul">Treinamentos</option>
-                                        <option value="Índico">Financeiro</option>
-                                        <option value="Pacífico Norte">Produtos</option>
+                                        <option value="Todos">Todos</option>
+                                        <option value="Sede">Sede</option>
+                                        <option value="Suzano">Suzano</option>
+                                        <option value="Campinas">Campinas</option>
+                                        <option value="ForcaVendas">Força de Vendas</option>
                                     </select>
                                 </div>
-                                <div class="Data">
+                                <div class="Data" id="dt_event">
                                     <h1 class="Nome">
                                         Data:
                                     </h1>
-                                    <input type="date" id="caixa_roxa" name="data" placeholder="Selecione uma data" required>
+                                    <input type="date" id="dt_evento_edit" class="caixa_roxa" name="data" placeholder="Selecione uma data" required>
                                 </div>
                             </div>
-                            <div class="botao_novo">
+                            <div class="botao_novo" id="btn_salvar_edit">
                                 <color class="verde"></color>
                                 <h1 class="novo_evento">
-                                    CADASTRAR
+                                    SALVAR
                                 </h1>
                             </div>
-                        </div>                        
-                        <div class="meus_eventos_botao">
-                           <color class="roxo"></color>
-                            <button class="Botao_eventos">Voltar</button>
+                        </div>
+                        <div class="meus_eventos_botao" id="btn_cx_myEventsEdit"> 
+                            <color class="roxo_Cancelamento"></color>
+                            <button class="Botao_eventos">Cancelar</button>
                         </div>
                     </div>
 

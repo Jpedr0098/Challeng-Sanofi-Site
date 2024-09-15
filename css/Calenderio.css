@@ -110,6 +110,7 @@
   }
   .prox_eventos_titulo {
     margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     right: 0;
@@ -142,6 +143,14 @@
     background-color: #7b0ae6;
     border-radius: 15px;
   }
+  .roxo_Cancelamento {
+    position: relative;
+    display: block;
+    min-height: 73px;
+    background-color: red;
+    border-radius: 15px;
+  }
+
   .roxo_calendario {
     position: relative;
     display: flex;
@@ -159,6 +168,7 @@
     background-color: #7b0ae6;
     border-radius: 15px;
     width: 100%;
+    margin-bottom: 20px;
   }
   .botao_novo {
     position: absolute;
@@ -225,7 +235,7 @@
     color: #010101;
     text-align: right;
   }
-  #caixa_roxa {
+  .caixa_roxa {
     display: block;
     padding-left: 10px;
     padding-right: 15px;

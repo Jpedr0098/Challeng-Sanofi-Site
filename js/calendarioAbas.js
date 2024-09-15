@@ -17,3 +17,8 @@ document.querySelector("#btn_cx_myEvents").addEventListener('click', function() 
     document.getElementById("cx_myEvents").classList.remove("hidden")
     document.getElementById("cx_newEvent").classList.add("hidden")
 })
+
+document.querySelector("#btn_cx_myEventsEdit").addEventListener('click', function() {
+    document.getElementById('cx_editEvent').classList.add('hidden')
+    document.getElementById("cx_myEvents").classList.remove("hidden")
+})
