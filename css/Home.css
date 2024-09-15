@@ -132,6 +132,8 @@
   }
   .fundo_calendario {
     position: relative;
+    display: flex;
+    align-items: center;
     min-height: 795px;
     background-color: white;
     border-radius: 15px;
@@ -169,4 +171,8 @@
   .conf_malas, .calendario, .conf_agil, .dash_agil {
     width: 85%;
     margin-left: 39px;
+  }
+
+  #calendar {
+    width: 100%;
   }
