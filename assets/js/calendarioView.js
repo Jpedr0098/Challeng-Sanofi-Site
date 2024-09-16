@@ -1,12 +1,13 @@
 var calendar
 var selectedEvent
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar')
     calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         height: '700px',
         fixedWeekCount: false,
         events: [],
+        locale: 'pt-br'
 
         //Click na barra do evento
         // eventClick: function(info) {
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.render()
 
     //ADD eventos
-    window.addEvent = function() {
+    window.addEvent = function () {
         document.getElementById('txt_training').classList.remove("erroIten")
         document.getElementById('dt_evento').classList.remove("erroIten")
         document.getElementById('txt_training').classList.remove("erroIten")
@@ -59,31 +60,31 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('txt_training').classList.add("erroIten")
             erroForms = true
         }
-        if (responsavel == ''){
+        if (responsavel == '') {
             document.getElementById('txt_responsavel').classList.add("erroIten")
             erroForms = true
         }
-        if (tipo_evento == ''){
+        if (tipo_evento == '') {
             document.getElementById('TipoEvent').classList.add("erroIten")
             erroForms = true
         }
-        if (area == ''){
+        if (area == '') {
             document.getElementById('Areas').classList.add("erroIten")
             erroForms = true
         }
-        if (local == ''){
+        if (local == '') {
             document.getElementById('local_formato').classList.add("erroIten")
             erroForms = true
         }
-        if (audiencia == ''){
+        if (audiencia == '') {
             document.getElementById('Audiencia').classList.add("erroIten")
             erroForms = true
         }
-        if (date == ''){
+        if (date == '') {
             document.getElementById('dt_evento').classList.add("erroIten")
             erroForms = true
         }
-        if (!erroForms){
+        if (!erroForms) {
             document.getElementById('txt_training').value = ''
             document.getElementById('txt_responsavel').value = ''
             document.getElementById('TipoEvent').value = ''
@@ -112,30 +113,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     //Deletar eventos
-    
+
 })
 
-function salvarLocal (objectEvent) {
+function salvarLocal(objectEvent) {
     const eventos = JSON.parse(localStorage.getItem("eventCalendar")) || []
     eventos.push(objectEvent)
     localStorage.setItem('eventCalendar', JSON.stringify(eventos))
     reloadPag()
 }
 
-function salvarAlteracao (objectEvent, tipo) {
+function salvarAlteracao(objectEvent, tipo) {
     const eventos = JSON.parse(localStorage.getItem("eventCalendar")) || []
     let newEventos = []
 
-    if (tipo == 1){
-        eventos.forEach(evento => { 
-            if(evento.id == objectEvent.id){
+    if (tipo == 1) {
+        eventos.forEach(evento => {
+            if (evento.id == objectEvent.id) {
                 evento = objectEvent
             }
             newEventos.push(evento)
         })
     } else {
-        eventos.forEach(evento => { 
-            if(evento.id != objectEvent){
+        eventos.forEach(evento => {
+            if (evento.id != objectEvent) {
                 newEventos.push(evento)
             }
         })
@@ -176,31 +177,31 @@ document.querySelector("#btn_salvar_edit").addEventListener('click', function up
         document.getElementById('txt_training').classList.add("erroIten")
         erroForms = true
     }
-    if (responsavel == ''){
+    if (responsavel == '') {
         document.getElementById('txt_responsavel').classList.add("erroIten")
         erroForms = true
     }
-    if (tipo_evento == ''){
+    if (tipo_evento == '') {
         document.getElementById('TipoEvent').classList.add("erroIten")
         erroForms = true
     }
-    if (area == ''){
+    if (area == '') {
         document.getElementById('Areas').classList.add("erroIten")
         erroForms = true
     }
-    if (local == ''){
+    if (local == '') {
         document.getElementById('local_formato').classList.add("erroIten")
         erroForms = true
     }
-    if (audiencia == ''){
+    if (audiencia == '') {
         document.getElementById('Audiencia').classList.add("erroIten")
         erroForms = true
     }
-    if (date == ''){
+    if (date == '') {
         document.getElementById('dt_evento').classList.add("erroIten")
         erroForms = true
     }
-    if (!erroForms){
+    if (!erroForms) {
         document.getElementById('txt_training').value = ''
         document.getElementById('txt_responsavel').value = ''
         document.getElementById('TipoEvent').value = ''
@@ -217,7 +218,7 @@ document.querySelector("#btn_salvar_edit").addEventListener('click', function up
         selectedEvent.setExtendedProp('audiencia', audiencia)
         selectedEvent.setStart(date)
         selectedEvent.setEnd(null);  // Remove o fim para garantir que seja um evento de um dia
-        
+
         var objectEvent = {
             id: selectedEvent.id,
             title: title,
@@ -231,8 +232,8 @@ document.querySelector("#btn_salvar_edit").addEventListener('click', function up
         }
         salvarAlteracao(objectEvent, 1)
 
-    document.getElementById('cx_editEvent').classList.add('hidden')
-    document.getElementById("cx_myEvents").classList.remove("hidden")
+        document.getElementById('cx_editEvent').classList.add('hidden')
+        document.getElementById("cx_myEvents").classList.remove("hidden")
     }
 })
 
@@ -243,7 +244,7 @@ function deleteEvent(eventId) {
     salvarAlteracao(eventId, 0)
 }
 
-function reloadPag(){
+function reloadPag() {
     document.querySelector("#addEventos").innerHTML = ''
     document.querySelector("#myEventosEdit").innerHTML = ''
 
@@ -261,7 +262,7 @@ eventos.forEach(evento => {
     myEventos(evento)
 });
 
-function proxEventos(evento){
+function proxEventos(evento) {
     let date = evento.start
     date = date.split('-')
     const cardTarefa = `
@@ -276,7 +277,7 @@ function proxEventos(evento){
     document.querySelector("#addEventos").appendChild(card)
 }
 
-function myEventos(evento){
+function myEventos(evento) {
     let date = evento.start
     date = date.split('-')
     const cardTarefa = `
