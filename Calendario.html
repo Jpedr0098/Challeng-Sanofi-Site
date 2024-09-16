@@ -7,15 +7,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="./css/common.css" />
-    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="./css/Calenderio.css" />
-    <link rel="stylesheet" type="text/css" href="./css/viewCalendario.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/Calenderio.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/viewCalendario.css" />
 
-    <script src="/js/calendarioView.js" defer></script>
-    <script src="/js/exit.js" defer></script>
-    <script src="/js/calendarioAbas.js" defer></script>
+    <script src="/assets/js/calendarioView.js" defer></script>
+    <script src="/assets/js/exit.js" defer></script>
+    <script src="/assets/js/calendarioAbas.js" defer></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
 
 </head>
@@ -28,12 +30,15 @@
                 <div class="cabecalho">
                     <div class="barraSuperior"></div>
                     <div class="info_cabecalho">
-                        <a href=".\Home.html"><img class="logoSanofi" src="./assets/logoSanofi.png" alt="alt text" /></a>
+                        <a href=".\Home.html"><img class="logoSanofi" src="./assets/images/logoSanofi.png"
+                                alt="alt text" /></a>
                         <div class="icones_cabecalho">
-                            <a href=".\Home.html"><img class="voltar" src="./assets/voltar.png"></a>
-                            <img class="perfil" src="./assets/perfil.png" alt="alt text" />
-                            <a href="./Usuarios_acessos.html"><img class="config" src="./assets/config.png" alt="alt text" /></a>
-                            <a id="exitWorkSpace" href="/index.html"><img class="sair" src="./assets/sair.png" alt="alt text" /></a>
+                            <a href=".\Home.html"><img class="voltar" src="./assets/images/voltar.png"></a>
+                            <img class="perfil" src="./assets/images/perfil.png" alt="alt text" />
+                            <a href="./Usuarios_acessos.html"><img class="config" src="./assets/images/config.png"
+                                    alt="alt text" /></a>
+                            <a id="exitWorkSpace" href="/index.html"><img class="sair" src="./assets/images/sair.png"
+                                    alt="alt text" /></a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +58,7 @@
                         </div>
                         <div class="meus_eventos_botao" id="btn_myEvents">
                             <color class="roxo"></color>
-                            <button class="Botao_eventos" >Meus Eventos</button>
+                            <button class="Botao_eventos">Meus Eventos</button>
                         </div>
                     </div>
 
@@ -65,18 +70,18 @@
                                 <h1 class="eventos_Titulo">
                                     MEUS EVENTOS
                                 </h1>
-                            </color>    
-                            <div id="myEventosEdit"  class="ajustesFlex">
+                            </color>
+                            <div id="myEventosEdit" class="ajustesFlex">
 
                             </div>
                             <div class="botao_novo" id="btn_newEvent">
                                 <color class="verde"></color>
-                                <button class="novo_evento" >NOVO EVENTO</button>
+                                <button class="novo_evento">NOVO EVENTO</button>
                             </div>
                         </div>
                         <div class="meus_eventos_botao" id="btn_cx_inicial">
                             <color class="roxo"></color>
-                            <button class="Botao_eventos" >Voltar</button>
+                            <button class="Botao_eventos">Voltar</button>
                         </div>
                     </div>
 
@@ -94,13 +99,13 @@
                                     <h1 class="Nome">
                                         Training:
                                     </h1>
-                                    <input type="text" class='caixa_roxa' id="txt_training"/>
+                                    <input type="text" class='caixa_roxa' id="txt_training" />
                                 </div>
                                 <div class="Responsavel">
                                     <h1 class="Nome">
                                         Responsavel:
                                     </h1>
-                                    <input type="text" class='caixa_roxa' id="txt_responsavel"/>
+                                    <input type="text" class='caixa_roxa' id="txt_responsavel" />
                                 </div>
                                 <div class="Tipo">
                                     <h1 class="Nome">
@@ -159,7 +164,8 @@
                                     <h1 class="Nome">
                                         Data:
                                     </h1>
-                                    <input type="date" id="dt_evento" class="caixa_roxa" name="data" placeholder="Selecione uma data" required>
+                                    <input type="date" id="dt_evento" class="caixa_roxa" name="data"
+                                        placeholder="Selecione uma data" required>
                                 </div>
                             </div>
                             <div class="botao_novo" onclick="addEvent()">
@@ -169,9 +175,9 @@
                                 </h1>
                             </div>
                         </div>
-                        <div class="meus_eventos_botao" id="btn_cx_myEvents"> 
+                        <div class="meus_eventos_botao" id="btn_cx_myEvents">
                             <color class="roxo"></color>
-                            <button class="Botao_eventos" >Voltar</button>
+                            <button class="Botao_eventos">Voltar</button>
                         </div>
                     </div>
 
@@ -189,13 +195,13 @@
                                     <h1 class="Nome">
                                         Training:
                                     </h1>
-                                    <input type="text" class='caixa_roxa' id="txt_training_edit"/>
+                                    <input type="text" class='caixa_roxa' id="txt_training_edit" />
                                 </div>
                                 <div class="Responsavel">
                                     <h1 class="Nome">
                                         Responsavel:
                                     </h1>
-                                    <input type="text" class='caixa_roxa' id="txt_responsavel_edit"/>
+                                    <input type="text" class='caixa_roxa' id="txt_responsavel_edit" />
                                 </div>
                                 <div class="Tipo">
                                     <h1 class="Nome">
@@ -254,7 +260,8 @@
                                     <h1 class="Nome">
                                         Data:
                                     </h1>
-                                    <input type="date" id="dt_evento_edit" class="caixa_roxa" name="data" placeholder="Selecione uma data" required>
+                                    <input type="date" id="dt_evento_edit" class="caixa_roxa" name="data"
+                                        placeholder="Selecione uma data" required>
                                 </div>
                             </div>
                             <div class="botao_novo" id="btn_salvar_edit">
@@ -264,7 +271,7 @@
                                 </h1>
                             </div>
                         </div>
-                        <div class="meus_eventos_botao" id="btn_cx_myEventsEdit"> 
+                        <div class="meus_eventos_botao" id="btn_cx_myEventsEdit">
                             <color class="roxo_Cancelamento"></color>
                             <button class="Botao_eventos">Cancelar</button>
                         </div>
@@ -290,7 +297,7 @@
                     <h1 class="desenvolvidoPor">
                         DEVELOPED BY
                     </h1>
-                    <img class="logoiHumanTech" src="./assets/logoiHumanTech.png" alt="alt text" />
+                    <img class="logoiHumanTech" src="./assets/images/logoiHumanTech.png" alt="alt text" />
                 </div>
             </div>
         </div>
