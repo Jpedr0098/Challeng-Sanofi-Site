@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100vh;
+  margin: 0;
+}
+
+.home_page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ebebeb;
+  overflow: hidden;
+  min-height: 100vh;
+  margin: 1rem 0;
+}
+ .conteudo-home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px 0;
+    margin: 1rem 0;
+  }
+  .corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 2vb 0;
+    width: 98vw;
+  }
+  .cabecalho {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .barraSuperior {
+    position: relative;
+    min-height: 9vh;
+    background-color: white;
+    border-radius: 15px;
+    outline: 2px solid #7b0ae6;
+  }
+  .info_cabecalho {
+    position: absolute;
+    padding: 1.5vb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 10px;
+    width: 100%;
+    height: 100%;
+  }
+  .logoSanofi {
+    margin-top: 1.1vb;
+    width: 20vb;
+    min-width: 0;
+  }
+  .icones_cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    min-width: 0;
+  }
+  .voltar {
+    width: 7.4vb;
+    min-width: 0;
+  }
+  .perfil {
+    width: 7vb;
+    min-width: 0;
+  }
+  .config {
+    width: 6vb;
+    min-width: 0;
+  }
+  .sair {
+    margin-top: 0.5vh;
+    width: 5vb;
+    min-width: 0;
+  }
+  .editar {
+    width: 1.7vw;
+    min-width: 0;
+  }
+  .delete {
+    width: 2vw;
+    min-width: 0;
+  }
+  .colunas {
+    display: flex;
+    align-self: flex-start;
+    justify-content: space-between;
+    gap: 3.2vb;
+    width: 98vw;
+  }
+  .caixa_botoes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 29.5vw;
+    height: 80.2vb;
+  }
+  .fundo_caixa {
+    position: relative;
+    min-height: 699px;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
+  }
+  .prox_eventos {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 29.5vw;
+    height: 797vb;
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
+  }
+  .prox_eventos_titulo {
+    padding-top: 1.5vh;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    font: 700 3.6vb/1.19 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    text-align: center;
+  }
+  .meus_eventos_botao {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 2.4vh 0 0;
+  }
+  .meus_eventos {
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    margin: 2.4vb 1.5vw;
+  }
+  .roxo {
+    position: relative;
+    display: block;
+    height: 7.3vh;
+    background-color: #7b0ae6;
+    border-radius: 15px;
+  }
+  .roxo_Cancelamento {
+    position: relative;
+    display: block;
+    min-height: 73px;
+    background-color: red;
+    border-radius: 15px;
+  }
+  .roxo_calendario {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 9.7vh;
+    background-color: #7b0ae6;
+    border-radius: 15px;
+  }
+  .roxo_meuseventos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 7.5vh;
+    background-color: #7b0ae6;
+    border-radius: 15px;
+    margin-bottom: 2vh;
+  }
+  .botao_novo {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    margin: 2.4vb 0 0;
+    width: 22.3vw;
+    bottom: 1.2vh;
+  }
+  .verde {
+    position: relative;
+    display: block;
+    height: 6vh;
+    background-color: #02a125;
+    border-radius: 15px;
+  }
+  .novo_evento {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font: 400 3.6vb/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+  }
+  .calendarioTitle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font: 800 5.6vb/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+  }
+  .eventos_Titulo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font: 400 4.2vb/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+  }
+  .Training, .Responsavel, .Tipo, .Area, .Formato, .Localidade, .Data {
+    display: flex;
+    align-items: center;
+    justify-items: right;
+    gap: 0 1vb;
+    margin-top: 2.1vb;
+    margin-bottom: 2.1vb;
+    width: 28vw;
+  }
+  .Nome {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 1.2vw;
+    width: 10vw;
+    font: 400 2.8vb/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    text-align: right;
+  }
+  .caixa_roxa {
+    display: block;
+    padding-left: 1vb;
+    padding-right: 1.5vb;
+    width: 75%;
+    min-width: 0;
+    height: 5.3vh;
+    background-color: rgba(123, 10, 230, 0);
+    border-radius: 15px;
+    outline: 3px solid #7b0ae6;
+    outline-offset: -3px;
+    font-size: large;
+  }
+  .Botao_eventos {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font: 400 3.8vb/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+  }
+  .caixa_calendario {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 66.8vw;
+  }
+  .fundo_calendario {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 80.1vh;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
+  }
+  .rodape {
+    position: fixed;
+    display: flex;
+    justify-content: end;
+    bottom: 0;
+    width: 100vw;
+    height: 5.6vh;
+    background-color: #010101;
+  }
+  .barraInferior {
+    position: flex;
+    display: flex;
+    align-items: center;
+    gap: 0 0.7vb;
+    padding-right: 1vw;
+  }
+  .desenvolvidoPor {
+    min-width: 0;
+    font: 300 3.6vb/1.2 "Inria Sans", Helvetica, Arial, serif;
+    color: #ebebeb;
+  }
+  .logoiHumanTech {
+    width: 10vb;
+  }
+

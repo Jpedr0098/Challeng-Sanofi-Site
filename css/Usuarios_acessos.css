@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100vh;
+  margin: 0;
+}
+
+.usuarios-acessos.userManagementSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #ebebeb;
+  overflow: hidden;
+  height: 100vh;
+}
+.usuarios-acessos .flex_col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px 0;
+  margin: 1rem 0;
+}
+.usuarios-acessos .flex_col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2vb 0;
+  width: 98vw
+}
+.usuarios-acessos .group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.usuarios-acessos .userStatusBlock {
+  position: relative;
+  min-height: 9vh;
+  background-color: white;
+  border-radius: 15px;
+  outline: 2px solid #7b0ae6;
+}
+.usuarios-acessos .flex_row {
+  position: absolute;
+  padding: 1.5vb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 10px;
+  width: 100%;
+  height: 100%;
+}
+.usuarios-acessos .image1 {
+    margin-top: 1.1vb;
+    width: 20vb;
+    min-width: 0;
+}
+.usuarios-acessos .flex_row1 {
+  display: flex;
+  align-items: center;
+  gap: 0 12px;
+  min-width: 0;
+}
+.usuarios-acessos .image6 {
+  width: 7vb;
+  min-width: 0;
+}
+.perfil {
+  width: 7vb;
+  min-width: 0;
+}
+.config {
+  width: 6vb;
+  min-width: 0;
+}
+.sair {
+  margin-top: 0.5vh;
+  width: 5vb;
+  min-width: 0;
+}
+.usuarios-acessos .flex_col2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  gap: 2.5vh;
+}
+.usuarios-acessos .flex_col9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 42.5vh;
+  gap: 2.1vh;
+}
+.usuarios-acessos .flex_row2 {
+  display: flex;
+  align-self: flex-start;
+  gap: 0 1vw;
+  width: 98vw;
+}
+.usuarios-acessos .group1, .group3, .group5, .group8 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 33vw;
+  height: 42.8vh;
+}
+.usuarios-acessos .group8 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 32vw;
+  min-width: 0;
+}
+.usuarios-acessos .flex_col3, .flex_col4, .flex_col5 {
+  position: relative;
+  height: 42.8vh;
+  background-color: white;
+  border-radius: 15px;
+  outline: 0.5px solid #010101;
+  padding-bottom: 1rem;
+  padding-left:  1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 32vw;
+}
+.usuarios-acessos .createUserTitle, .updateUserTitle, .deleteUserTitle {
+  display: flex;
+  justify-content: center;
+  font: 700 3.6vb/1.19 "Inria Sans", Helvetica, Arial, serif;
+  color: #010101;
+  text-align: center;
+}
+.usuarios-acessos .flex_row3,.flex_row4, .flex_row5, .flex_row6 {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 0 1vw;
+  height: 13vh;
+  width: 30vw;
+}
+.usuarios-acessos .createUserHeader, .updateUserHeader, .deleteUserHeader {
+  display: flex;
+  padding-left: 0.6vw;
+  justify-content: flex-start;
+  width: 6.6vw;
+  font: 400 2.8vb/1.21 "Inria Sans", Helvetica, Arial, serif;
+  color: #010101;
+  text-align: right;
+}
+.usuarios-acessos .block8 {
+  display: block;
+  height: 7.5vh;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+}
+.usuarios-acessos .accessLevelHeader, .updateAccessLevelHeader {
+  display: flex;
+  justify-content: flex-start;
+  width: 8.9vw;
+  font: 400 2.8vb/1.21 "Inria Sans", Helvetica, Arial, serif;
+  color: #010101;
+  text-align: right;
+}
+.usuarios-acessos .group2, .group4, .group7 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 24px 0 0;
+  width: 65.49%;
+}
+.usuarios-acessos .block10 {
+  position: relative;
+  display: block;
+  height: 7.5vh;
+  background-color: #02a125;
+  border-radius: 15px;
+}
+.usuarios-acessos .confirmTitle, .resetPasswordTitle, .deleteConfirmationTitle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font: 400 3.6vb/1.21 "Inria Sans", Helvetica, Arial, serif;
+  color: white;
+  text-align: right;
+}
+.usuarios-acessos .block4 {
+  position: relative;
+  display: block;
+  height: 7.5vh;
+  background-color: #7b0ae6;
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+}
+
+.usuarios-acessos .flex_row9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28.8vw;
+  height: 8vh;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+  font-size: large;
+  padding: 1vb;
+}
+.usuarios-acessos .flex_col51 {
+  position: relative;
+  height: 11.6vh;
+  background-color: white;
+  border-radius: 15px;
+  outline: 0.5px solid #010101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block112 {
+  display: block;
+  width: 25vw;
+  height: 8vh;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  border-color: transparent;
+  font-size: large;
+}
+.block112:focus {
+  outline: transparent;
+}
+.usuarios-acessos .image10 {
+  position: relative;
+  display: block;
+  align-content: flex-start;
+  z-index: 1;
+  height: 5vh;
+}
+.usuarios-acessos .block6 {
+  position: relative;
+  display: block;
+  height: 7.5vh;
+  background-color: #a10702;
+  border-radius: 15px;
+  outline: 3px solid #a10702;
+  outline-offset: -3px;
+}
+.usuarios-acessos #block9 {
+  display: block;
+  width: 23vw;
+  height: 7.5vh;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+  font-size: large;
+}
+.usuarios-acessos .group6 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 98vw;
+}
+.usuarios-acessos .group12 {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+.usuarios-acessos .imageBlock {
+  position: relative;
+  height: 32vh;
+  background-color: white;
+  border-radius: 15px;
+  outline: 0.5px solid #010101;
+}
+.usuarios-acessos .flex_row7 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 0 0.5vw;
+}
+.usuarios-acessos .image4 {
+  width: 3vw;
+  min-width: 0;
+}
+.usuarios-acessos .hero_title2 {
+  display: flex;
+  justify-content: center;
+  font: 400 4.2vb/1.19 "Inria Sans", Helvetica, Arial, serif;
+  color: #7b0ae6;
+  text-align: center;
+}
+.usuarios-acessos .developerInfoBlock {
+  position: relative;
+  min-height: 5.6vh;
+  background-color: #010101;
+}
+.usuarios-acessos .flex_row8 {
+  position: absolute;
+  top: -0.1vh;
+  right: 1vw;
+  display: flex;
+  align-items: center;
+  gap: 0 0.7vb;
+}
+.usuarios-acessos .developedByTitle {
+  font: 300 3.5vb/1.2 "Inria Sans", Helvetica, Arial, serif;
+  color: #ebebeb;
+}
+.usuarios-acessos .image {
+  width: 4.8vw;
+}
+#block8 {
+  display: block;
+  width: 23vw;
+  height: 7.5vh;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+  font-size: large;
+}
+
+#block12 {
+  display: block;
+  width: 30vw;
+  height: 7.5vh;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+  font-size: large;
+  padding: 0 0.7vw;
+}

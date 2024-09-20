@@ -5,39 +5,37 @@
 <head>
 
     <meta charset="utf-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Conferência de Malas</title>
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/Malas.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./css/Malas.css" />
 
-    <script src="./assets/js/exit.js" defer></script>
-    <script src="./assets/js/mala_forms.js" defer></script>
+    <script src="./js/exit.js" defer></script>
+    <script src="./js/mala_forms.js" defer></script>
+
 
 </head>
 
 <body class="home_page">
-
-    <section class="home_geral">
         <!-- Main section for user management features. -->
-        <div class="conteudo-home">
             <div class="corpo">
                 <!-- cabeçalho -->
                 <div class="cabecalho">
                     <div class="barraSuperior"></div>
                     <!-- Block indicating the user status. -->
                     <div class="info_cabecalho">
-                        <a href=".\Home.html"><img class="logoSanofi" src="./assets/images/logoSanofi.png"
-                                alt="alt text" /></a>
+                        <a href=".\Inicio.html"><img class="logoSanofi" src="./assets/logoSanofi.png" alt="alt text" /></a>
                         <div class="icones_cabecalho">
-                            <a href=".\Home.html"><img class="voltar" src="./assets/images/voltar.png"></a>
-                            <img class="perfil" src="./assets/images/perfil.png" alt="alt text" />
-                            <a href="./Usuarios_acessos.html"><img class="config" src="./assets/images/config.png"
-                                    alt="alt text" /></a>
-                            <a id="exitWorkSpace" href="/index.html"><img class="sair" src="./assets/images/sair.png"
-                                    alt="alt text" /></a>
+                            <a href=".\Inicio.html"><img class="voltar" src="./assets/voltar.png"></a>
+                            <img class="perfil" src="./assets/perfil.png" alt="alt text" />
+                            <a href="./Usuarios_acessos.html"><img class="config" src="./assets/config.png" alt="alt text" /></a>
+                            <a id="exitWorkSpace" href="/index.html"><img class="sair" src="./assets/sair.png" alt="alt text" /></a>
                         </div>
                     </div>
                 </div>
@@ -71,12 +69,12 @@
                                 </h1>
                                 <select id="area_solicitacao" class="caixa_roxa" name="setor" required>
                                     <option value="" disabled selected>Selecione um setor</option>
-                                    <option value="Compras">Compras</option>
-                                    <option value="Vendas">Vendas</option>
-                                    <option value="Malas">Malas</option>
-                                    <option value="Treinamentos">Treinamentos</option>
-                                    <option value="Financeiro">Financeiro</option>
-                                    <option value="Produtos">Produtos</option>
+                                    <option value="Antártico">Compras</option>
+                                    <option value="Ártico">Vendas</option>
+                                    <option value="Atlântico Norte">Malas</option>
+                                    <option value="Atlântico Sul">Treinamentos</option>
+                                    <option value="Índico">Financeiro</option>
+                                    <option value="Pacífico Norte">Produtos</option>
                                 </select>
                             </div>
                             <div class="botoes">
@@ -87,18 +85,20 @@
                                 </button>
                             </div>
                             <div class="botoes">
-                                <a
-                                    href="https://app.powerbi.com/reportEmbed?reportId=3d920963-bde0-4787-8c91-1cff9a263c26&autoAuth=true&ctid=11dbbfe2-89b8-4549-be10-cec364e59551">
-                                    <color class="roxo"></color>
-                                </a>
-                                <a class="dashTitle"
-                                    href="https://app.powerbi.com/reportEmbed?reportId=3d920963-bde0-4787-8c91-1cff9a263c26&autoAuth=true&ctid=11dbbfe2-89b8-4549-be10-cec364e59551">DASHBOARD</a>
-                                <!-- Title for confirmation section. -->
+                                <a href="https://app.powerbi.com/reportEmbed?reportId=3d920963-bde0-4787-8c91-1cff9a263c26&autoAuth=true&ctid=11dbbfe2-89b8-4549-be10-cec364e59551"><color class="roxo"></color></a>
+                                <a class="dashTitle"href="https://app.powerbi.com/reportEmbed?reportId=3d920963-bde0-4787-8c91-1cff9a263c26&autoAuth=true&ctid=11dbbfe2-89b8-4549-be10-cec364e59551">DASHBOARD</a>
+                                    <!-- Title for confirmation section. -->
+                            </div>
+                        </div>
+                        <div class="solicita">
+                            <div class="botoes_s">
+                                <a href="./Solicitacao.html"><color class="branco"></color></a>
+                                <a class="soliTitle"href="./Solicitacao.html">SOLICITAÇÕES</a>
+                                    <!-- Title for confirmation section. -->
                             </div>
                         </div>
                     </div>
                     <div class="caixa_Malas">
-                        <div class="fundo_caixa_malas"></div>
                         <!-- Block indicating user access level. -->
                         <div class="catalogo_malas">
                             <h1 class="malas_titulo">
@@ -108,39 +108,32 @@
                         </div>
                         <div class="imagens_malas">
                             <div class="itens_malas">
-                                <label for="mala01"><img calss="mala1" src="./assets/images/mala1.png" alt="mala1"
-                                        width="80%" height="90%"></label>
+                                <img class="mala1" src="./assets/mala1.png" alt="mala1">
                                 <input type="checkbox" id='mala01' class="bola_roxa" />
                             </div>
                             <div class="itens_malas">
-                                <label for="mala02"><img calss="mala2" src="./assets/images/mala2.png" alt="mala2"
-                                        width="80%" height="90%"></label>
+                                <img class="mala2" src="./assets/mala2.png" alt="mala2">
                                 <input type="checkbox" id='mala02' class="bola_roxa" />
                             </div>
                             <div class="itens_malas">
-                                <label for="mala03"><img calss="mala3" src="./assets/images/mala3.png" alt="mala3"
-                                        width="80%" height="90%"></label>
+                                <img class="mala3" src="./assets/mala3.png" alt="mala3">
                                 <input type="checkbox" id='mala03' class="bola_roxa" />
                             </div>
                             <div class="itens_malas">
-                                <label for="mala04"><img calss="mala4" src="./assets/images/mala4.png" alt="mala4"
-                                        width="80%" height="90%"></label>
+                                <img class="mala4" src="./assets/mala4.png" alt="mala4">
                                 <input type="checkbox" id='mala04' class="bola_roxa" />
                             </div>
                             <div class="itens_malas">
-                                <label for="mala05"><img calss="mala5" src="./assets/images/mala5.png" alt="mala5"
-                                        width="80%" height="90%"></label>
+                                <img class="mala5" src="./assets/mala5.png" alt="mala5">
                                 <input type="checkbox" id='mala05' class="bola_roxa" />
                             </div>
                             <div class="itens_malas">
-                                <label for="mala06"><img calss="mala6" src="./assets/images/mala6.png" alt="mala6"
-                                        width="80%" height="90%"></label>
+                                <img class="mala6" src="./assets/mala6.png" alt="mala6">
                                 <input type="checkbox" id='mala06' class="bola_roxa" />
                             </div>
                         </div>
                     </div>
                     <div class="caixa_Perifericos">
-                        <div class="fundo_caixa_malas"></div>
                         <!-- Block indicating user access level. -->
                         <div class="catalogo_perifericos">
                             <h1 class="perifericos_titulo">
@@ -150,55 +143,43 @@
                         </div>
                         <div class="imagens_peri">
                             <div class="itens_perifericos">
-                                <label for="peri01"><img calss="peri1" src="./assets/images/peri1.png" alt="peri1"
-                                        width="80%" height="90%"></label>
+                                <img class="peri1" src="./assets/peri1.png" alt="peri1" width="80%" height="90%">
                                 <input type="checkbox" id='peri01' class="bola_roxa" />
                             </div>
                             <div class="itens_perifericos">
-                                <label for="peri02"><img calss="peri2" src="./assets/images/peri2.png" alt="peri2"
-                                        width="80%" height="90%"></label>
+                                <img class="peri2" src="./assets/peri2.png" alt="peri2" width="80%" height="90%">
                                 <input type="checkbox" id='peri02' class="bola_roxa" />
                             </div>
                             <div class="itens_perifericos">
-                                <label for="peri03"><img calss="peri13" src="./assets/images/peri3.png" alt="peri3"
-                                        width="80%" height="90%"></label>
+                                <img class="peri13" src="./assets/peri3.png" alt="peri3" width="80%" height="90%">
                                 <input type="checkbox" id='peri03' class="bola_roxa" />
                             </div>
                             <div class="itens_perifericos">
-                                <label for="peri04"><img calss="peri4" src="./assets/images/peri4.png" alt="peri4"
-                                        width="80%" height="90%"></label>
+                                <img class="peri4" src="./assets/peri4.png" alt="peri4" width="80%" height="90%">
                                 <input type="checkbox" id='peri04' class="bola_roxa" />
                             </div>
                             <div class="itens_perifericos">
-                                <label for="peri05"><img calss="peri5" src="./assets/images/peri5.png" alt="peri5"
-                                        width="80%" height="90%"></label>
+                                <img class="peri5" src="./assets/peri5.png" alt="peri5" width="80%" height="90%">
                                 <input type="checkbox" id='peri05' class="bola_roxa" />
                             </div>
                             <div class="itens_perifericos">
-                                <label for="peri06"><img calss="peri6" src="./assets/images/peri6.png" alt="peri6"
-                                        width="80%" height="90%"></label>
+                                <img class="peri6" src="./assets/peri6.png" alt="peri6" width="80%" height="90%">
                                 <input type="checkbox" id='peri06' class="bola_roxa" />
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
             <div class="rodape">
-                <div class="fundo_rodape"></div>
                 <!-- Block for showing developer information. -->
                 <div class="barraInferior">
                     <h1 class="desenvolvidoPor">
                         <!-- Title indicating the developer. -->
                         DEVELOPED BY
                     </h1>
-                    <img class="logoiHumanTech" src="./assets/images/logoiHumanTech.png" alt="alt text" />
+                    <img class="logoiHumanTech" src="./assets/logoiHumanTech.png" alt="alt text" />
                 </div>
             </div>
-        </div>
-    </section>
 
 
 </body>
